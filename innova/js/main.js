@@ -1,3 +1,8 @@
+ AOS.init({
+  duration: 800,
+  easing: 'slide-up',
+  once: true
+ });
 (function($) {
 
 	'use strict';
@@ -71,7 +76,8 @@
       autoplay: true,
       stagePadding: 20,
       margin:50,
-      nav: true,
+      nav: false,
+      dots: true,
       smartSpeed: 1000,
       navText: ['<span class="ion-chevron-left">', '<span class="ion-chevron-right">'],
       responsive:{
@@ -84,7 +90,6 @@
           items:2
         },
         1000:{
-          // stagePadding: 200,
           items:2
         }
       }

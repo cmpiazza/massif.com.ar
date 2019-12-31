@@ -1,4 +1,4 @@
-$font-heading: 'Raleway', sans-serif;
+$font-heading: 'Abril Fatface', sans-serif;
 @import "bootstrap";
 @import "variables";
 @import "mixins";
@@ -12,7 +12,7 @@ body {
 	background: $white;
 	font-family: $font-family-sans-serif;
 	font-weight: 400;
-	font-size: 1.05rem;
+	font-size: .96rem;
 	line-height: 1.8;
 	color: gray('600');
 }
@@ -32,6 +32,7 @@ h1, h2, h3, h4, h5 {
 .btn, .form-control {
 	outline: none;
 	box-shadow: none!important;
+	border-radius: 0;
 	&:focus, &:active {
 		outline: none;
 	}
@@ -40,6 +41,7 @@ h1, h2, h3, h4, h5 {
 	box-shadow: none!important;
 	height: 50px;
 	border-width: 2px;
+	border-color: $black;
 }
 textarea.form-control {
 	height: inherit;
@@ -104,6 +106,7 @@ header {
 		letter-spacing: .2em;
 		font-weight: 400;
 		color: $white;
+		font-family: $font-heading;
 		
 		&.absolute {
 			position: absolute;
@@ -127,7 +130,7 @@ header {
 		padding-bottom: 0;
 		background: none!important;
 		position: relative;
-		font-family: $font-heading;
+		font-family: $font-family-sans-serif;
 		@include media-breakpoint-down(lg) {
 			background: rgba(0,0,0,1)!important;
 			padding-top: .5rem;
@@ -136,14 +139,16 @@ header {
 		.nav-link {
 			padding: 1.7rem 1rem!important;
 			outline: none!important;
-			font-size: 1.05rem;
+			font-size: .9rem;
+			letter-spacing: .1rem;
+			text-transform: uppercase;
 			font-weight: 300;
-			color: rgba($white, .5);
+			color: $white;
 			@include media-breakpoint-down(md) {
 				padding: .5rem 0rem!important;
 			}
 			&.active {
-				color: $white;
+				color: $primary;
 			}
 		}
 
@@ -180,7 +185,6 @@ header {
 				}
 				&.active {
 					background: theme-color('primary');
-					// background: gray('100');
 					color: $black;
 				}
 			}
@@ -341,7 +345,6 @@ header {
 		.owl-prev {
 			
 			left: 30px!important;
-			// border: 1px solid red;
 		}
 		.owl-next {
 			right: 30px!important;
@@ -392,6 +395,7 @@ header {
 				z-index: 10;
 				height: calc(50vh - 117px);
 				min-height: 550px;	
+
 				.slider-text {
 					color: $white;
 					height: calc(50vh - 117px);
@@ -487,8 +491,17 @@ header {
 				position: absolute;
 				top: 0; left: 0; right: 0; bottom: 0;
 				background: $black;
-				opacity: .4;
+				opacity: .3;
 			}
+			// &:after {
+			// 		bottom: 0;
+			// 		position: absolute;
+			// 		content: "";
+			// 		width: 50%;
+			// 		height: 60px;
+			// 		background: $primary;
+			// 		transform: translateY(50%);
+			// 	}
 			.slider-text {
 				color: $white;
 				height: calc(100vh);
@@ -498,20 +511,20 @@ header {
 					color: $white;
 				}
 				h1 {
-					font-size: 5rem;
+					font-size: 7rem;
 					color: $white;
 					line-height: 1.2;
 					font-weight: 700!important;
-					text-transform: uppercase;
+
 					margin-bottom: 30px;
-					margin-left: 0.5em;
+					// margin-left: 0.5em;
 					span {
 						color: white;
 				    background-color: $primary;
 				    box-shadow: 0.5em 0 0 $primary,-0.5em 0 0 $primary;
 					}
 					@include media-breakpoint-down(md) {
-						font-size: 40px;
+						font-size: 3rem;
 					}
 				}
 				p {
@@ -776,42 +789,36 @@ header {
 	text-transform: uppercase;
 	font-size: 12px;
 	color: lighten($black, 70%);
-	letter-spacing: .2em;
+	letter-spacing: .2em;	
 	display: block;
 	margin-bottom: 10px;
 }
 // Footer
 .site-footer {
 	padding: 7em 0;
-	background: #333;
-	// background: lighten($black, 15%);
-	
-	// font-size: 13px;
-	// color: rgba(255,255,255,.5);
+	// background: lighten(#d5a500, 10%);
 	p {
-		color: rgba($white, .5);
+		color: $black;
 		&:last-child {
 			margin-bottom: 0;
 		}
 	}
 	
 	a {
-		color: rgba($white, .7);
+		color: $black;
 		text-decoration: underline;
-		&:hover {
-			color: $white;
-			text-decoration: none;
-			// border-bottom: 1px solid rgba($black,.2);
-		}
 	}
 	h3 {
 		font-size: 1rem;
 		letter-spacing: .1em;
 		font-weight: bold;
-		color: $white;
-		text-transform: uppercase;
+		color: $black;
+		// text-transform: uppercase;
 	}
 	.footer-link {
+		a {
+			color: $black;
+		}
 		li {
 			line-height: 1.5;
 			margin-bottom: 15px;
@@ -1014,6 +1021,7 @@ header {
 		padding-bottom: 30px;
 	}
 	.owl-nav {
+		display: none;
 		position: relative;
 		position: absolute;
 		bottom: -40px;
@@ -1034,14 +1042,32 @@ header {
 			}
 		}
 	}
+	.owl-dots {
+		text-align: center;
+		bottom: -2rem;
+		position: relative;
+		.owl-dot {
+			display: inline-block;
+			> span {
+				display: inline-block;
+				width: 7px;
+				height: 7px;
+				background: #ccc;
+				margin: 5px;
+				border-radius: 50%;
+			}
+			&.active {
+				> span {
+					background: $primary;
+				}
+			}
+		}
+	}
 } 
  .block-33 {
-	// box-shadow: 0 10px 20px -5px rgba(0,0,0,.2);
-	background: $white;
 	max-width: 700px;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 40px;
 	.vcard {
 		.image {
 			flex: 0 0 60px;
@@ -1186,7 +1212,6 @@ header {
 	}
 }
 .section-title {
-	text-transform: uppercase;
 	font-weight: 300;
 	strong {
 		font-weight: 700;
@@ -1224,7 +1249,7 @@ header {
 	border-radius: 50%;
 	position: relative;
 	position: absolute;
-	transition: .3s all ease-in-out;
+	transition: .2s all ease;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -1429,37 +1454,12 @@ figure {
 
 /**/
 
-.service-box {
-	text-align: center;
-	.square-figure {
-		width: 90px;
-		height: 90px;
-		border: 2px solid $primary;
-		display: inline-block;
-		border-radius: 7px;
-		text-align: center;
-		transform: rotate(45deg);
-		margin-bottom: 2rem;
-		background: $primary;
-		span {
-			display: block;
-			font-size: 2rem;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			color: $white;
-			transform: translate(-50%, -50%) rotate(-45deg);
-		}
-	}
-	h3 {
-		font-size: 1.2rem;
-		font-weight: 300;
-	}
-}
+
 
 .service {
 	.icon {
-		font-size: 2rem;
+		font-size: 3rem;
+		color: $primary;
 	}
 	h3 {
 		font-size: 1.2rem;
@@ -1496,6 +1496,7 @@ figure {
 .custom-breadcrumbs {
 	font-size: 1rem!important;
 	a {
+		display: inline-block;
 		font-size: 1rem!important;
 		text-decoration: underline;
 		color: $white!important;
@@ -1509,29 +1510,32 @@ figure {
 
 .img-dotted-bg {
 	position: relative;
-	img {
-		box-shadow: 10px 10px 0 0 #eee;
-	}
 	&:after {
 		position: absolute;
 		content: "";
 		z-index: -1;
 		background: url('../images/dotted.jpg') repeat;
-		bottom: -50px;
-		right: -50px;
+		top: -50px;
+		left: -50px;
 		width: 200px;
 		height: 400px;
+	}
+	.img-absolute {
+		position: absolute;
+		
+		max-width: 300px;
+		bottom: -20px;
+		right: -20px;
 	}
 }
 
 .portfolio-section {
-	background: #90a8af;
+	// background: #90a8af;
 }
 
 .work-thumb {
 	display: block;
 	position: relative;
-	margin-bottom: 30px;
 	img {
 		border: 10px solid $white;
 	}
@@ -1549,7 +1553,6 @@ figure {
 		h2 {
 			color: $white;
 			font-weight: 300;
-			text-transform: uppercase;
 			margin-bottom: 0;
 			font-size: 1.5rem;
 		}
@@ -1585,4 +1588,17 @@ figure {
 	display: inline-block;
 	position: relative;
 	transform: translateX(-50%);
+}
+
+.quick-contact {
+	color: $black;
+	.caption {
+		
+	}
+}
+
+.block-fixed {
+	position: sticky;
+  position: -webkit-sticky;
+  top: 0; /* required */ 
 }
