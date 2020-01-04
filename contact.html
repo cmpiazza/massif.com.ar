@@ -76,7 +76,7 @@
       <div class="row slider-text align-items-center justify-content-center text-center">
         <div class="col-lg-12 col-sm-12">
           <h1 class="mb-4" data-aos="fade-up" data-aos-delay="">Contact Us</h1>
-          <p class="custom-breadcrumbs" data-aos="fade-up" data-aos-delay="100"><a href="index.html">Home</a> <span class="mx-3">/</span> Contact</p>
+          <p class="custom-breadcrumbs" data-aos="fade-up" data-aos-delay="100"><a href="index.html">Inicio</a> <span class="mx-3">/</span> Contacto</p>
         </div>
       </div>
     </div>
@@ -90,19 +90,19 @@
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="">
               <p class="d-flex">
                 <span class="ion-ios-location icon mr-5"></span>
-                <span>34 Street Name, City Name Here, United States</span>
+                <span>Zona Norte, Buenos Aires, Argentina</span>
               </p>
             </div>
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
               <p class="d-flex">
                 <span class="ion-ios-telephone icon mr-5"></span>
-                <span>+1 242 4942 290</span>
+                <span><a href="tel://+5491164977897">+54 9 11 6497 7897</a></span>
               </p>
             </div>
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
               <p class="d-flex">
                 <span class="ion-android-mail icon mr-5"></span>
-                <span>info@yourdomain.com</span>
+                <span>info@massif.com.ar</span>
               </p>
             </div>
           </div>
@@ -112,16 +112,16 @@
       <div class="row mt-5">
 
         <div class="col-12 mb-5 order-2">
-          <form action="#" method="post">
+          <form action="https://formspree.io/moqjzvdg" method="post">
             <div class="row">
+              <div class="help-block with-errors" class="col-md-6 form-group">
+                <label for="name">Nombre *</label>
+                <input type="text" id="name" class="form-control" placeholder="Por favor ingrese su nombre" required="required" data-error="Firstname is required.">
+              </div class="help-block with-errors">
               <div class="col-md-6 form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" class="form-control ">
-              </div>
-              <div class="col-md-6 form-group">
-                <label for="phone">Phone</label>
-                <input type="text" id="phone" class="form-control ">
-              </div>
+                <label for="phone">Teléfono *</label>
+                <input type="text" id="phone" class="form-control" placeholder="Por favor ingrese su teléfono" required="required" data-error="Phone number is required.">
+              </div class="help-block with-errors">
             </div>
             <div class="row">
               <div class="col-md-12 form-group">
@@ -130,20 +130,30 @@
             </div>
             <div class="row">
               <div class="col-md-12 form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" class="form-control ">
-              </div>
+                <label for="email">Email *</label>
+                <input type="email" id="email" class="form-control" placeholder="Por favor ingrese su email" required="required" data-error="Valid email is required.">
+              </div class="help-block with-errors">
             </div>
             <div class="row">
               <div class="col-md-12 form-group">
-                <label for="message">Write Message</label>
-                <textarea name="message" id="message" class="form-control " cols="30" rows="8"></textarea>
-              </div>
+                <label for="message">Estamos ansiosos de poder comenzar un nuevo proyecto con ustedes.</label>
+                <textarea name="message" id="message" class="form-control " cols="30" rows="8" placeholder="Por favor escriba su consulta" required="required" data-error="Please, leave us a message."></textarea>
+              </div class="help-block with-errors">
             </div>
             <div class="row">
               <div class="col-md-6 form-group">
-                <input type="submit" value="Send Message" class="btn btn-outline-black px-3 py-3">
+                <input type="submit" value="Enviar" class="btn btn-outline-black px-3 py-3" onclick="myFunction()">
               </div>
+            </div>
+            <div class="form-group col-11 mt-2 text-center justify-content-center align-items-center text-uppercase ftco-uppercase" id="demo" ></div>
+            <script>
+            function myFunction() {
+              document.getElementById("demo").innerHTML = "Mensaje enviado, gracias.";
+            }
+            </script>
+            <div class="col-md-12">
+                <p class="text-muted">
+                <strong>*</strong> Campos obligatorios.</p>
             </div>
           </form>
         </div>
