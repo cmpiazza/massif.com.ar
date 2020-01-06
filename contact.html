@@ -112,16 +112,16 @@
       <div class="row mt-5">
 
         <div class="col-12 mb-5 order-2">
-          <form name="contactform" action="https://formspree.io/moqjzvdg" method="POST" role="form">
+          <form name="contactform" action="contact-form-handler.php" method="POST" role="form" id="contact-form">
             <div class="row">
               <div class="col-md-6 form-group">
                 <label for="name">Nombre *</label>
-                <input type="text" id="name" name="name" class="form-control" required="required" data-error="Por favor ingrese su nombre">
+                <input id="form_name" type="text" name="name" class="form-control" required="required" data-error="Por favor ingrese su nombre">
                 <div class="help-block with-errors"></div>
               </div>
               <div class="col-md-6 form-group">
                 <label for="phone">Teléfono *</label>
-                <input type="text" id="phone" name="Phone" class="form-control" required="required" data-error="Por favor ingrese su teléfono">
+                <input type="text" id="phone" name="phone" class="form-control" required="required" data-error="Por favor ingrese su teléfono">
                 <div class="help-block with-errors"></div>
               </div>
             </div>
@@ -133,14 +133,14 @@
             <div class="row">
               <div class="col-md-12 form-group">
                 <label for="email">Email *</label>
-                <input type="text" id="email" name="email" class="form-control" required="required" data-error="Por favor ingrese una cuenta de correo válida">
+                <input type="text" id="form_email" name="email" class="form-control" required="required" data-error="Por favor ingrese una cuenta de correo válida">
                 <div class="help-block with-errors"></div>
               </div>
             </div>
             <div class="row">
               <div class="col-md-12 form-group">
                 <label for="message">Estamos ansiosos de poder comenzar un nuevo proyecto con ustedes.</label>
-                <textarea name="message" id="message" class="form-control " cols="30" rows="8" required="required" data-error="Por favor ingrese su mensaje"></textarea>
+                <textarea name="message" id="form_message" class="form-control " cols="30" rows="8" required="required" data-error="Por favor ingrese su mensaje"></textarea>
                 <div class="help-block with-errors"></div>
               </div>
             </div>
