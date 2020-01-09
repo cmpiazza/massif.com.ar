@@ -130,19 +130,17 @@
       <div class="row mt-5">
 
         <div class="col-12 mb-5 order-2">
-          <form id="contact-form">
+          <form name="contactform" action="contact-form-handler.php" method="POST" role="form" id="contact-form">
             <div class="row">
-
               <div class="col-md-6 form-group">
-                <label for="contact-name">Nombre *</label>
-                <input id="form_name" type="text" name="name" class="form-control" onkeyup='validateName()'>
-                <span class='error-message' id='name-error'></span>
+                <label for="name">Nombre *</label>
+                <input id="form_name" type="text" name="name" class="form-control" required="required" data-error="Por favor ingrese su nombre">
+                <div class="help-block with-errors"></div>
               </div>
-
               <div class="col-md-6 form-group">
-                <label for="contact-phone">Teléfono *</label>
-                <input type="tel" id="form_phone" name="phone" class="form-control" onkeyup='validatePhone()'>
-                <span class='error-message' id='phone-error'></span>
+                <label for="phone">Teléfono *</label>
+                <input type="text" id="phone" name="phone" class="form-control" required="required" data-error="Por favor ingrese su teléfono">
+                <div class="help-block with-errors"></div>
               </div>
             </div>
             <div class="row">
@@ -152,28 +150,31 @@
             </div>
             <div class="row">
               <div class="col-md-12 form-group">
-                <label for="form-email">Email *</label>
-                <input type="email" id="form_email" name="email" class="form-control" onkeyup='validateEmail()'>
-                <span class='error-message' id='email-error'></span>
+                <label for="email">Email *</label>
+                <input type="text" id="form_email" name="email" class="form-control" required="required" data-error="Por favor ingrese una cuenta de correo válida">
+                <div class="help-block with-errors"></div>
               </div>
             </div>
-
             <div class="row">
               <div class="col-md-12 form-group">
-                <label for="contactMmessage">Mensaje</label>
-                <textarea name="message" id="form_message" class="form-control " cols="30" rows="8" placeholder='Estamos ansiosos de poder comenzar un nuevo proyecto con ustedes.' onkeyup='validateMessage()'></textarea>
-                <span class='error-message' id='message-error'></span>
+                <label for="message">Mensaje *</label>
+                <textarea name="message" id="form_message" class="form-control " cols="30" rows="8" placeholder='Estamos ansiosos de poder comenzar un nuevo proyecto con ustedes.' required="required" data-error="Por favor ingrese su mensaje"></textarea>
+                <div class="help-block with-errors"></div>
               </div>
             </div>
-
             <div class="row">
               <div class="col-md-6 form-group">
-                <button onclick='return validateForm()' class="btn btn-default">Enviar</button>
-                <span class='error-message' id='submit-error'></span>
+                <input type="submit" value="Enviar" class="btn btn-outline-black px-3 py-3">
               </div>
             </div>
             <div class="form-group col-11 mt-2 text-center justify-content-center align-items-center text-uppercase ftco-uppercase" id="demo" ></div>
-            <script src="/contact-form.js"></script>
+            <script language="JavaScript">
+              var frmvalidator  = new Validator("contactform");
+              frmvalidator.addValidation("name","req","Please provide your name"); 
+              frmvalidator.addValidation("phone","req","Please provide your phone"); 
+              frmvalidator.addValidation("email","req","Please provide your email"); 
+              frmvalidator.addValidation("email","email","Please enter a valid email address"); 
+              </script>
             <div class="col-md-12">
                 <p class="text-muted">
                 <strong>*</strong> Campos obligatorios.</p>
@@ -357,7 +358,6 @@
   <script src="js/jquery.stellar.min.js"></script>
   <script src="js/aos.js"></script>
   <script src="js/main.js"></script>
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
 
 </body>
 
