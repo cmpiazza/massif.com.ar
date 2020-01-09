@@ -168,6 +168,13 @@
               </div>
             </div>
             <div class="form-group col-11 mt-2 text-center justify-content-center align-items-center text-uppercase ftco-uppercase" id="demo" ></div>
+            <script language="JavaScript">
+              var frmvalidator  = new Validator("contactform");
+              frmvalidator.addValidation("name","req","Please provide your name"); 
+              frmvalidator.addValidation("phone","req","Please provide your phone"); 
+              frmvalidator.addValidation("email","req","Please provide your email"); 
+              frmvalidator.addValidation("email","email","Please enter a valid email address"); 
+              </script>
             <div class="col-md-12">
                 <p class="text-muted">
                 <strong>*</strong> Campos obligatorios.</p>
