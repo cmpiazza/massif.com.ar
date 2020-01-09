@@ -548,6 +548,67 @@ header {
 			}
 			
 		}
+.slider-message {
+			padding: 14em 0;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: top center;
+			height: calc(100vh);
+			min-height: 700px;	
+			position: relative;
+			&:before {
+				content: "";
+				position: absolute;
+				top: 0; left: 0; right: 0; bottom: 0;
+				// background: $black;
+				// opacity: .3;
+			}
+			.message-text {
+				color: $grey;
+				height: calc(100vh);
+				min-height: 700px;
+				.child-name {
+					font-size: 40px;
+					color: $grey;
+				}
+				h1 {
+					font-size: 4rem;
+					color: $grey;
+					line-height: 1.2;
+					font-weight: 700!important;
+
+					margin-bottom: 30px;
+					// margin-left: 0.5em;
+					span {
+						color: grey;
+				    background-color: $primary;
+				    box-shadow: 0.5em 0 0 $primary,-0.5em 0 0 $primary;
+					}
+					@include media-breakpoint-down(md) {
+						font-size: 3rem;
+					}
+				}
+				p {
+					font-size: 20px;
+					line-height: 1.5;
+					font-weight: 300;
+					color: rgba(255,255,255,1);
+					margin: 0 auto;
+					a {
+						color: $primary;
+						text-decoration: underline;
+						&:hover {
+							color: $white;
+							text-decoration: underline;
+						}
+					}
+					&.sub-text {
+						line-height: 2;
+					}
+				}
+			}
+			
+		}
 .owl-custom-nav {
 	float: right;
 	position: relative;
@@ -795,7 +856,7 @@ header {
 }
 // Footer
 .site-footer {
-	padding: 7em 0;
+	padding: 3em 0;
 	// background: lighten(#d5a500, 10%);
 	p {
 		color: $black;
@@ -1216,6 +1277,9 @@ header {
 	strong {
 		font-weight: 700;
 	}
+}
+.section-message {
+	font-weight: 450;
 }
 .navbar-toggler {
 	border:1px solid transparent!important;

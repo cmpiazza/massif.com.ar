@@ -32,7 +32,7 @@ if( empty($errors))
 	$headers .= "Reply-To: $email_address";
 	
 	mail($to,$email_subject,$email_body,$headers);
-	header('Location: index.html#section-contact');
+	header('Location: contact-sent.html#message-sent-section');
 } 
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
