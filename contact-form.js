@@ -91,6 +91,17 @@ function validateName() {
         return false;
     }
     else {
+        Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "username",
+            Password : "password",
+            To : 'info@massif.com.ar',
+            From : "info@massif.com.ar",
+            Subject : "This is the subject",
+            Body : "And this is the body"
+        }).then(
+          message => alert(message)
+        );
   
     }
   }
