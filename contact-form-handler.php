@@ -1,6 +1,6 @@
 <?php 
 $errors = '';
-$myemail = 'info@massif.com.ar';//<-----Put Your email address here.
+$myemail = 'info@massif.com.ar';
 if(empty($_POST['name'])  ||
    empty($_POST['phone']) || 
    empty($_POST['email']) || 

@@ -130,17 +130,19 @@
       <div class="row mt-5">
 
         <div class="col-12 mb-5 order-2">
-          <form name="contactform" action="contact-form-handler.php" method="POST" role="form" id="contact-form">
+          <form id="contact-form">
             <div class="row">
+
               <div class="col-md-6 form-group">
-                <label for="name">Nombre *</label>
-                <input id="form_name" type="text" name="name" class="form-control" required="required" data-error="Por favor ingrese su nombre">
-                <div class="help-block with-errors"></div>
+                <label for="contact-name">Nombre *</label>
+                <input id="form_name" type="text" name="name" class="form-control" placeholder="Enter your name.." onkeyup='validateName()'>
+                <span class='error-message' id='name-error'></span>
               </div>
+
               <div class="col-md-6 form-group">
-                <label for="phone">Teléfono *</label>
-                <input type="text" id="phone" name="phone" class="form-control" required="required" data-error="Por favor ingrese su teléfono">
-                <div class="help-block with-errors"></div>
+                <label for="contact-phone">Teléfono *</label>
+                <input type="tel" id="form_phone" name="phone" class="form-control" placeholder="Ex: 1231231234" onkeyup='validatePhone()'>
+                <span class='error-message' id='phone-error'></span>
               </div>
             </div>
             <div class="row">
@@ -150,31 +152,28 @@
             </div>
             <div class="row">
               <div class="col-md-12 form-group">
-                <label for="email">Email *</label>
-                <input type="text" id="form_email" name="email" class="form-control" required="required" data-error="Por favor ingrese una cuenta de correo válida">
-                <div class="help-block with-errors"></div>
+                <label for="form-email">Email *</label>
+                <input type="email" id="form_email" name="email" class="form-control" placeholder="Enter Email" onkeyup='validateEmail()'>
+                <span class='error-message' id='email-error'></span>
               </div>
             </div>
+
             <div class="row">
               <div class="col-md-12 form-group">
-                <label for="message">Estamos ansiosos de poder comenzar un nuevo proyecto con ustedes.</label>
-                <textarea name="message" id="form_message" class="form-control " cols="30" rows="8" required="required" data-error="Por favor ingrese su mensaje"></textarea>
-                <div class="help-block with-errors"></div>
+                <label for="contactMmessage">Estamos ansiosos de poder comenzar un nuevo proyecto con ustedes.</label>
+                <textarea name="message" id="form_message" class="form-control " cols="30" rows="8" placeholder="Enter a brief message" onkeyup='validateMessage()'></textarea>
+                <span class='error-message' id='message-error'></span>
               </div>
             </div>
+
             <div class="row">
               <div class="col-md-6 form-group">
-                <input type="submit" value="Enviar" class="btn btn-outline-black px-3 py-3">
+                <button onclick='return validateForm()' class="btn btn-default">Submit</button>
+                <span class='error-message' id='submit-error'></span>
               </div>
             </div>
             <div class="form-group col-11 mt-2 text-center justify-content-center align-items-center text-uppercase ftco-uppercase" id="demo" ></div>
-            <script language="JavaScript">
-              var frmvalidator  = new Validator("contactform");
-              frmvalidator.addValidation("name","req","Please provide your name"); 
-              frmvalidator.addValidation("phone","req","Please provide your phone"); 
-              frmvalidator.addValidation("email","req","Please provide your email"); 
-              frmvalidator.addValidation("email","email","Please enter a valid email address"); 
-              </script>
+            <script src="/contact-form.js"></script>
             <div class="col-md-12">
                 <p class="text-muted">
                 <strong>*</strong> Campos obligatorios.</p>
