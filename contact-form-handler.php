@@ -6,10 +6,11 @@ if(empty($_POST['name'])  ||
    empty($_POST['email']) || 
    empty($_POST['message']))
 {
-    $errors .= "\n Error: all fields are required";
+    $errors .= "\n Error: Por favor completa todos los campos *";
 }
 
 $name = $_POST['name']; 
+$phone = $_POST['phone'];
 $email_address = $_POST['email']; 
 $message = $_POST['message']; 
 
